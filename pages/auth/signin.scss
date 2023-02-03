@@ -1,0 +1,26 @@
+@import '../../global.scss';
+.auth{
+    width: 100%;
+    min-height: 90vh;
+    @include dfc(center,center);
+    .container{
+        width: 400px;
+        padding: 10px;
+        @include dfc(center, flex-start);
+        .cont{
+            @include df(center,center);
+            margin: 5px 0;
+            width: 100%;
+            h2{
+                color: $color3;
+            }
+            p{
+                color: $color3;
+                a{
+                    color: $color2;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

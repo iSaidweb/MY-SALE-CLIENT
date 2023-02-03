@@ -1,0 +1,50 @@
+@import '../../global.scss';
+aside{
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    background: $color;
+    z-index: 999;
+    .close-btn{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .links{
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        @include dfc(center, flex-start);
+        a{
+            margin: 5px 0;
+            padding: 5px 2px;
+            color: $color3;
+            width: 100%;
+            @include df(center,center);
+            transition: all .2s;
+            &:hover{
+                color: $color;
+                background: $color3;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+aside.active{
+    right: 0;
+    box-shadow: -2px 0 10px $shadow;
+}
+.menu-closer{
+    width: 0;
+    height: 100vh;
+    background: $shadow;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 996;
+}
+.menu-closer.active{
+    width: 100%;
+}

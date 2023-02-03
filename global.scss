@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .5s;
+    font-family: Comfortaa;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+@mixin df($a,$j){
+    display: flex;
+    align-items: $a;
+    justify-content: $j;
+}
+@mixin dfc($a,$j){
+    display: flex;
+    align-items: $a;
+    justify-content: $j;
+    flex-direction: column;
+}
+@mixin dg($c, $g){
+    display: grid;
+    grid-template-columns: repeat($c, auto);
+    grid-gap: $g;
+}
+$color: #fff;
+$color2: #0096c7;
+$color3: #023e8a;
+$color4: #03045e;
+$alert: #d90429;
+$success: #2fa71a;
+$shadow: rgba(0, 0, 0, 0.174);
+body{
+    background: #e0e8f3;
+}
