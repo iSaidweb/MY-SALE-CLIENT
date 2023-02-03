@@ -9,6 +9,7 @@ import { checkAuth } from './reducers/userSlice';
 import { useEffect } from "react";
 import axios from 'axios'
 import SignIN from "./pages/auth/signin";
+import Pannel from "./admin/pannel";
 function Main() {
     const dispatch = useDispatch();
     useEffect(() => {
@@ -26,6 +27,7 @@ function Main() {
         });
     }, [dispatch])
     const is_auth = useSelector(state => state.user.is_auth);
+    const is_admin = useSelector(state => state.user.is_admin);
     return (
         <>
             <Navbar />
@@ -33,8 +35,9 @@ function Main() {
             <Routes>
                 <Route exact path="/signup" element={!is_auth ? <SignUP /> : null} />
                 <Route exact path="/signin" element={!is_auth ? <SignIN /> : null} />
+                <Route exact path="/admin" element={is_admin ? <Pannel /> : null} />
             </Routes>
-            <ToastContainer autoClose={1500} position={'top-center'} style={{ width: '310px' }} />
+            <ToastContainer autoClose={1500} position={'top-center'} />
         </>
     );
 }

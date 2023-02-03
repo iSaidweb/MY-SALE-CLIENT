@@ -10,24 +10,32 @@ aside{
     .close-btn{
         position: absolute;
         left: 0;
-        top: 0;
+        top: 10px;
     }
     .links{
         width: 100%;
         padding: 10px;
-        margin-top: 20px;
+        margin-top: 40px;
         @include dfc(center, flex-start);
         a{
             margin: 5px 0;
-            padding: 5px 2px;
+            padding: 10px;
             color: $color3;
             width: 100%;
-            @include df(center,center);
+            @include df(center,flex-start);
             transition: all .2s;
+            i{
+                margin-right: 10px;
+                color: $color3;
+            }
             &:hover{
                 color: $color;
                 background: $color3;
                 border-radius: 4px;
+                i{
+                    color: $color;
+                    margin-right: 20px;
+                }
             }
         }
     }

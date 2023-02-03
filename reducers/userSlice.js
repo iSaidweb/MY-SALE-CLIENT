@@ -5,10 +5,11 @@ const userSlice = createSlice({
     name: 'user',
     initialState: {
         is_auth: false,
-        info: {}
+        info: {},
+        is_admin: false
     },
     reducers: {
-        authenticate: async (state, { payload } = null) => {
+        authenticate: async (state,{ payload } = null) => {
             if (payload.type === 'up') {
                 axios.post(
                     'http://localhost:5000/api/auth/signup',
@@ -48,6 +49,7 @@ const userSlice = createSlice({
             if (success) {
                 state.is_auth = true;
                 state.info = userInfo
+                state.is_admin = userInfo.is_admin
             } else {
                 state.is_auth = false;
             }
